@@ -8,6 +8,7 @@ else:
             if num % denominator == 0:
                 break
         else:
-            print(num)
             counter += 1
+        if num % 10000 == 0:
+            print(num)
     print(f"There are {counter} prime numbers less than {number}.")
