@@ -33,9 +33,18 @@ numbers["hundred"] = 100
 
 inputnum = input("Type out a number: ")
 
+finalnum = 0
+
+if "and" in inputnum:
+    num2 = inputnum.split(" and ")
+    finalnum = 100
+    inputnum = num2[1]
+
 num = inputnum.split("-")
 
 if inputnum in numbers:
-    print("The number you typed out is " + str(numbers[inputnum]))
+    finalnum += numbers[inputnum]
 else:
-    print("The number you typed out is " + str(numbers[num[0]] + numbers[num[1]]))
+    finalnum += numbers[num[0]] + numbers[num[1]]
+    
+print("The number you typed out is " + str(finalnum))
